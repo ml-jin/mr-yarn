@@ -89,12 +89,19 @@ hdfs dfs -put MR/test.dat hdfs:///JJW/
 ![这里写图片描述](https://img-blog.csdn.net/2018081314420018?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI5MTg2MTk5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 **简单配置一下看看结果**：
 
-```
+```bash
 hadoop jar ../hadoop-streaming-2.6.0.jar 
 -mapper 'python mapper.py' -file ./mapper.py 
 -reducer 'python reducer.py' -file reducer.py 
 -input /JJW/test.dat
 -output /JJW/output112345
+
+## ambari version
+hadoop jar /usr/hdp/3.0.1.0-187/hadoop-mapreduce/hadoop-streaming-3.1.1.3.0.1.0-187.jar \
+-mapper 'python mapper.py' -file ./mapper.py \
+-reducer 'python reduce.py' -file ./reduce.py \
+-input /tmp/test.dat   \
+-output /tmp/outputjz1
 ```
 
 **最后一行是这么个结果就成功了：**
