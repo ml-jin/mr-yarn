@@ -6,9 +6,9 @@
 简单介绍下环境：
 
 ```
-hadoop2.6.4
-hadoop-streaming-2.6.0.jar
-线上python2，线下python3都可以用123
+hadoop3.1.1
+hadoop-streaming-3.1.1.jar
+线上python2，线下python3都可以用
 ```
 
 ------
@@ -90,6 +90,7 @@ hdfs dfs -put MR/test.dat hdfs:///JJW/
 **简单配置一下看看结果**：
 
 ```bash
+# 网上版
 hadoop jar ../hadoop-streaming-2.6.0.jar 
 -mapper 'python mapper.py' -file ./mapper.py 
 -reducer 'python reducer.py' -file reducer.py 
